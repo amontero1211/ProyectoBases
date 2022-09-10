@@ -5,14 +5,13 @@ import AppBar from '@mui/material/AppBar';
 function Header() {
   return (
     <AppBar position="static" style={{ background: '#ce93d8' }}>
-      <Box sx={{ display: 'flex', gap: 30 }}>
+      <Box sx={{ display: 'flex', gap: 90 }}>
         <img src="src/pictures/Museo.png" alt="Museo de Arte Contemporaneo" height={100} width={100} className="logo" />
         <Box sx={{
           display: 'flex',
           gap: 2,
-          marginTop: 3,
-          marginBottom: 6,
-          marginRight: 6,
+          marginTop: 5,
+          marginBottom: 5,
         }}
         >
           <p> Welcome! Join us</p>

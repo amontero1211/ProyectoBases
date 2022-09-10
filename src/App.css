@@ -10,7 +10,7 @@
   will-change: filter;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #f564ffaa);
+  filter: drop-shadow(0 0 2em #1d0036aa);
 }
 .Head {
   background-color: aqua;
