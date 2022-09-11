@@ -5,7 +5,7 @@ const Filtro = ({ nameFilter, opciones, ...rest }) => (
   <Autocomplete disablePortal
     id={nameFilter}
     options={opciones}
-    sx={{ width: 300 }}
+    sx={{ width: 300, marginTop: 10, marginLeft: 120 }}
     renderInput={(params) => <TextField {...params} label="Choose" />}
     {...rest}
   />

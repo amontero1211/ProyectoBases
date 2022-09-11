@@ -4,6 +4,7 @@ import ArtTitle from './ArtTitle';
 import ArtImagen from './ArtImagen';
 import CardArt from './CardArt';
 import CardDescription from './CardDescription';
+import { borderRight } from '@mui/system';
 
 export default function Artes() {
   return (
@@ -11,7 +12,7 @@ export default function Artes() {
       display: 'flex',
       gap: 3,
       marginLeft: 10,
-      marginTop: 5,
+      marginTop: 10,
     }}
     >
       <CardArt>
@@ -22,7 +23,7 @@ export default function Artes() {
             justifyContent: 'center',
             marginTop: 4,
             marginBottom: 4,
-            width: 150,
+            width: 200,
           }}
         >
           <ArtImagen pictureUrl="/src/pictures/Logo Museo.png" altText="Art" />
@@ -33,6 +34,7 @@ export default function Artes() {
         <Box
           sx={{
             marginTop: 4,
+            marginLeft: 12,
           }}
         >
           <Button>Ver mas</Button>
