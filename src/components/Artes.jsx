@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 import ArtTitle from './ArtTitle';
 import ArtImagen from './ArtImagen';
 import CardArt from './CardArt';
 import CardDescription from './CardDescription';
-import '/src/App.css'
+import '../App.css';
 
 export default function Artes() {
   return (
@@ -27,18 +28,22 @@ export default function Artes() {
             width: 200,
           }}
         >
-          <ArtImagen pictureUrl="/src/pictures/Logo Museo.png" altText="Art" className="Tarjeta"/>
+          <ArtImagen
+            pictureUrl="/src/pictures/Logo Museo.png"
+            altText="Art"
+            className="Tarjeta"
+          />
         </Box>
-        <CardDescription>
-          Info
-        </CardDescription>
+        <CardDescription>Info</CardDescription>
         <Box
           sx={{
             marginTop: 4,
             marginLeft: 12,
           }}
         >
-          <Button>Ver mas</Button>
+          <Link to="/vermas">
+            <Button>Ver mas</Button>
+          </Link>
         </Box>
       </CardArt>
     </Box>

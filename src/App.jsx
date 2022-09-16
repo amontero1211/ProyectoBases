@@ -1,17 +1,17 @@
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Welcome from './components/Welcome';
-import Filtro from './components/Filtro';
-import Artes from './components/Artes';
+import Home from './routes/root';
+import Vermas from './routes/vermas';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Welcome />
-      <Filtro id="Todas" options="./components/ejemplo.jsx" />
-        <Artes />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="vermas" element={<Vermas />} />
+    </Routes>
   );
 }
 

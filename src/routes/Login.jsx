@@ -5,7 +5,7 @@ import Welcome from '../components/Welcome';
 import Filtro from '../components/Filtro';
 import Artes from '../components/Artes';
 
-function Root() {
+function Login() {
   //   const navigate = useNavigate();
   return (
     <div className="App">
@@ -22,4 +22,4 @@ function Root() {
   );
 }
 
-export default Root;
+export default Login;
