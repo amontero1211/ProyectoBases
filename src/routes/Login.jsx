@@ -6,18 +6,10 @@ import Filtro from '../components/Filtro';
 import Artes from '../components/Artes';
 
 function Login() {
-  //   const navigate = useNavigate();
   return (
     <div className="App">
-      {/* <button
-        onClick={() => {
-          navigate('vermas');
-        }}
-      /> */}
+      <p>ALAAAA</p>
       <Header />
-      <Welcome />
-      <Filtro id="Todas" options="./components/ejemplo.jsx" />
-      <Artes />
     </div>
   );
 }

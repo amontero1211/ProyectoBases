@@ -4,7 +4,7 @@ const Icon = ({ pictureUrl, altText, ...rest }) => (
   <Avatar
     alt={altText}
     src={pictureUrl}
-    sx={{ width: 100, height: 100 }}
+    sx={{ width: 200, height: 200 }}
     variant="square"
     {...rest}
   />

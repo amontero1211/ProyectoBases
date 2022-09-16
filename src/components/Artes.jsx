@@ -25,6 +25,8 @@ export default function Artes() {
             justifyContent: 'center',
             marginTop: 4,
             marginBottom: 4,
+            marginLeft: 5,
+            marginRight: 5,
             width: 200,
           }}
         >

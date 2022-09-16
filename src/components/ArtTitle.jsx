@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 
 const ArtTitle = ({ children }) => (
-  <Typography variant="h5" component="div" textAlign="center" color="primary">
+  <Typography variant="h3" component="div" textAlign="center" color="secondary">
     {children}
   </Typography>
 );
