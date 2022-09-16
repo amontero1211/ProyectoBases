@@ -4,16 +4,17 @@ import ArtTitle from './ArtTitle';
 import ArtImagen from './ArtImagen';
 import CardArt from './CardArt';
 import CardDescription from './CardDescription';
-import { borderRight } from '@mui/system';
+import '/src/App.css'
 
 export default function Artes() {
   return (
-    <Box sx={{
-      display: 'flex',
-      gap: 3,
-      marginLeft: 10,
-      marginTop: 10,
-    }}
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 3,
+        marginLeft: 10,
+        marginTop: 10,
+      }}
     >
       <CardArt>
         <ArtTitle>TITULO</ArtTitle>
@@ -26,7 +27,7 @@ export default function Artes() {
             width: 200,
           }}
         >
-          <ArtImagen pictureUrl="/src/pictures/Logo Museo.png" altText="Art" />
+          <ArtImagen pictureUrl="/src/pictures/Logo Museo.png" altText="Art" className="Tarjeta"/>
         </Box>
         <CardDescription>
           Info

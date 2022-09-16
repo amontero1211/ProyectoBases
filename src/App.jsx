@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Welcome />
       <Filtro id="Todas" options="./components/ejemplo.jsx" />
-      <Artes>Ver mas</Artes>
+        <Artes />
     </div>
   );
 }
