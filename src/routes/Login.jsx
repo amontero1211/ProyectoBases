@@ -1,15 +1,84 @@
-import '../App.css';
-// import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import TextField from '@mui/material/TextField';
+import { useForm, Controller } from 'react-hook-form';
+import Card from '@mui/material/Card';
+import Skeleton from '@mui/material/Skeleton';
+import axios from 'axios';
+import Button from '../components/Button';
 import Header from '../components/Header';
-import Welcome from '../components/Welcome';
-import Filtro from '../components/Filtro';
-import Artes from '../components/Artes';
+import '../App.css';
 
 function Login() {
+  const [isLoading, setLoading] = useState(false);
+  const { handleSubmit, control } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      axios.post('urldelendpointdelogin', data);
+      setLoading(false);
+    } catch (error) {
+      alert(error);
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="App">
-      <p>ALAAAA</p>
       <Header />
+
+      <Container>
+        <Card>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {isLoading ? (
+              <Skeleton variant="circular" width={40} height={40} />
+            ) : (
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  maxWidth: 400,
+                  gap: 3,
+                  m: 'auto',
+                  mt: 5,
+                  mb: 20,
+                }}
+              >
+                <Controller
+                  name="user"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="user"
+                      label="Usuario"
+                    />
+                  )}
+                />
+                <Controller
+                  name="password"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="user"
+                      label="Password"
+                      type="password"
+                    />
+                  )}
+                />
+
+                <Button type="submit">Enviar</Button>
+              </Box>
+            )}
+          </form>
+        </Card>
+      </Container>
     </div>
   );
 }
