@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './routes/root';
 import Vermas from './routes/vermas';
-import Login from './routes/login';
+import Login from './routes/Login';
 
 function App() {
   return (
