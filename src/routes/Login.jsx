@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import { useForm, Controller } from 'react-hook-form';
 import Card from '@mui/material/Card';
@@ -28,14 +27,12 @@ function Login() {
   return (
     <div className="App">
       <Header />
-
-      <Container>
+      <Box sx={{ marginTop: 15 }}>
         <Card>
           <form onSubmit={handleSubmit(onSubmit)}>
             {isLoading ? (
               <Skeleton variant="circular" width={40} height={40} />
             ) : (
-
               <Box
                 sx={{
                   display: 'flex',
@@ -44,7 +41,8 @@ function Login() {
                   gap: 3,
                   m: 'auto',
                   mt: 5,
-                  mb: 20,
+                  mb: 3,
+                  marginTop: 15,
                 }}
               >
                 <Controller
@@ -77,8 +75,11 @@ function Login() {
               </Box>
             )}
           </form>
+          <Box sx={{ display: 'flex', marginLeft: 58, mb: 5 }}>
+            <h3>Did you forgot your password?</h3>
+          </Box>
         </Card>
-      </Container>
+      </Box>
     </div>
   );
 }

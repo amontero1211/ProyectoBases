@@ -16,7 +16,7 @@ function Root() {
       /> */}
       <Header />
       <Welcome />
-      <Filtro id="Todas" options="./components/ejemplo.jsx" />
+      <Filtro id="Todas" options="../components/ejemplo.jsx" />
       <Artes />
     </div>
   );

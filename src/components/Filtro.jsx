@@ -1,8 +1,9 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-const Filtro = ({ nameFilter, opciones, ...rest }) => (
-  <Autocomplete disablePortal
+const Filtro = ({ nameFilter, opciones, params, ...rest }) => (
+  <Autocomplete
+    disablePortal
     id={nameFilter}
     options={opciones}
     sx={{ width: 300, marginTop: 10, marginLeft: 120 }}
