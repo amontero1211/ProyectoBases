@@ -14,9 +14,10 @@ function Login() {
   const { handleSubmit, control } = useForm();
 
   const onSubmit = async (data) => {
+    console.log('pene', data);
     try {
       setLoading(true);
-      axios.post('urldelendpointdelogin', data);
+      await axios.post('urldelendpointdelogin', data);
       setLoading(false);
     } catch (error) {
       alert(error);

@@ -3,12 +3,14 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useForm, Controller } from 'react-hook-form';
 import Card from '@mui/material/Card';
-import ComboBox from '@mui/material/Autocomplete';
 import Skeleton from '@mui/material/Skeleton';
 import axios from 'axios';
 import Button from '../components/Button';
 import Header from '../components/Header';
+import Filtro from '../components/Filtro';
 import '../App.css';
+
+const opciones = ['Opcion 1', 'Opcion 2'];
 
 function Register() {
   const [isLoading, setLoading] = useState(false);
@@ -17,7 +19,7 @@ function Register() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      axios.post('urldelendpointdelogin', data);
+      await axios.post('urldelendpointderegister', data);
       setLoading(false);
     } catch (error) {
       alert(error);
@@ -101,53 +103,56 @@ function Register() {
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="user"
+                      id="password"
                       label="Password"
                       type="password"
                     />
                   )}
                 />
-                {/* <h4>Your security questions</h4>
+                <h4>Your security questions</h4>
                 <p>
                   In case you forgot your password, you might need to answer
                   this questions
                 </p>
+                <Filtro id="preguntas1" options={opciones} />
                 <Controller
-                  name="creditcardnumber"
+                  name="pregunta1"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="creditcardnumber"
-                      label="Number"
+                      id="pregunta1"
+                      label="First Answer"
                     />
                   )}
                 />
+                <Filtro id="preguntas2" options={opciones} />
                 <Controller
-                  name="ExpDate"
+                  name="pregunta2"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="ExpDate"
-                      label="Expiration Date ex: MM/YY"
+                      id="pregunta2"
+                      label="Second Answer"
                     />
                   )}
                 />
+                <Filtro id="preguntas3" options={opciones} />
                 <Controller
-                  name="BackNumbers"
+                  name="pregunta3"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="BackNumbers"
-                      label="Numbers from the back of your card ex:XXX"
+                      id="pregunta3"
+                      label="Third Answer"
                     />
                   )}
-                /> */}
+                />
                 <h4>Your credit card info</h4>
                 <Controller
                   name="creditcardnumber"

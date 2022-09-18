@@ -2,8 +2,13 @@ import '../App.css';
 // import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
-import Filtro from '../components/Filtro';
 import Artes from '../components/Artes';
+import Filtro from '../components/Filtro';
+// import Slack from '@mui/material/Slack';
+// import Autocomplete from '@mui/material/Autocomplete';
+// import TextField from '@mui/material/TextField';
+
+const opciones = ['The Godfather', 'Pulp Fiction'];
 
 function Root() {
   //   const navigate = useNavigate();
@@ -16,7 +21,7 @@ function Root() {
       /> */}
       <Header />
       <Welcome />
-      <Filtro id="Todas" options="../components/ejemplo.jsx" />
+      <Filtro options={opciones} />
       <Artes />
     </div>
   );
