@@ -197,9 +197,6 @@ function Register() {
               </Box>
             )}
           </form>
-          <Box sx={{ display: 'flex', marginLeft: 58, mb: 5 }}>
-            <h3>Did you forgot your password?</h3>
-          </Box>
         </Card>
       </Box>
     </div>

@@ -6,6 +6,8 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Autor from './routes/Autor';
 import PasswordForgot from './routes/PasswordForgot';
+import Registroobras from './routes/Registroobras';
+import Registroautor from './routes/RegistroAutor';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="register" element={<Register />} />
       <Route path="passwordforgot" element={<PasswordForgot />} />
       <Route path="autor" element={<Autor />} />
+      <Route path="artregister" element={<Registroobras />} />
+      <Route path="autorregister" element={<Registroautor />} />
     </Routes>
   );
 }

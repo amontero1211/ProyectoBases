@@ -1,7 +1,6 @@
 import '../App.css';
 import Box from '@mui/material/Box';
 import Header from '../components/Header';
-import Button from '../components/Button';
 import ArtTitle from '../components/ArtTitle';
 import ArtImagen from '../components/ArtImagen';
 import Costo from '../components/Costo';
