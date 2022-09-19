@@ -21,7 +21,9 @@ function Root() {
       /> */}
       <Header />
       <Welcome />
-      <Filtro options={opciones} />
+      <div className="Filtro">
+        <Filtro options={opciones} />
+      </div>
       <Artes />
     </div>
   );

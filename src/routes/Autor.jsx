@@ -49,14 +49,6 @@ function Root() {
             <CardDescription>Fuaaa</CardDescription>
           </Box>
         </Box>
-        <Box
-          sx={{
-            marginTop: 10,
-            marginBottom: 10,
-          }}
-        >
-          <Button size="large"> Comprar </Button>
-        </Box>
       </Box>
     </div>
   );

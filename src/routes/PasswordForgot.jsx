@@ -7,10 +7,12 @@ import Skeleton from '@mui/material/Skeleton';
 import axios from 'axios';
 import Button from '../components/Button';
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
+import Filtro from '../components/Filtro';
 import '../App.css';
 
-function Login() {
+const opciones = ['Opcion 1', 'Opcion 2'];
+
+function PasswordForgot() {
   const [isLoading, setLoading] = useState(false);
   const { handleSubmit, control } = useForm();
 
@@ -42,33 +44,52 @@ function Login() {
                   maxWidth: 400,
                   gap: 3,
                   m: 'auto',
-                  mt: 5,
-                  mb: 3,
-                  marginTop: 15,
+                  mt: 10,
+                  mb: 10,
+                  alignContent: 'center',
                 }}
               >
+                <h2>Your security questions</h2>
+                <p>
+                  In case you forgot your password, you might need to answer
+                  this questions
+                </p>
+                <Filtro id="preguntas1" options={opciones} />
                 <Controller
-                  name="user"
+                  name="pregunta1"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="user"
-                      label="Usuario"
+                      id="pregunta1"
+                      label="First Answer"
                     />
                   )}
                 />
+                <Filtro id="preguntas2" options={opciones} />
                 <Controller
-                  name="password"
+                  name="pregunta2"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="user"
-                      label="Password"
-                      type="password"
+                      id="pregunta2"
+                      label="Second Answer"
+                    />
+                  )}
+                />
+                <Filtro id="preguntas3" options={opciones} />
+                <Controller
+                  name="pregunta3"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="pregunta3"
+                      label="Third Answer"
                     />
                   )}
                 />
@@ -77,15 +98,10 @@ function Login() {
               </Box>
             )}
           </form>
-          <Box sx={{ display: 'flex', marginLeft: 58, mb: 5 }}>
-            <Link to="/PasswordForgot">
-              <h3>Did you forgot your password?</h3>
-            </Link>
-          </Box>
         </Card>
       </Box>
     </div>
   );
 }
 
-export default Login;
+export default PasswordForgot;

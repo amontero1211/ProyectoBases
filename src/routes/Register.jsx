@@ -114,7 +114,6 @@ function Register() {
                   In case you forgot your password, you might need to answer
                   this questions
                 </p>
-                <Filtro id="preguntas1" options={opciones} />
                 <Controller
                   name="pregunta1"
                   control={control}
