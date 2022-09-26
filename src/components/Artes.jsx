@@ -1,13 +1,15 @@
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
+// import { useEffect } from 'react';
 import Button from './Button';
 import ArtTitle from './ArtTitle';
 import ArtImagen from './ArtImagen';
 import CardArt from './CardArt';
 import CardDescription from './CardDescription';
 import '../App.css';
+// import { Children } from 'react';
 
-export default function Artes() {
+export default function Artes({ info }) {
   return (
     <Box
       sx={{
@@ -18,7 +20,7 @@ export default function Artes() {
       }}
     >
       <CardArt>
-        <ArtTitle>TITULO</ArtTitle>
+        <ArtTitle>{info.name}</ArtTitle>
         <Box
           sx={{
             display: 'flex',
@@ -36,7 +38,10 @@ export default function Artes() {
             className="Tarjeta"
           />
         </Box>
-        <CardDescription>Info</CardDescription>
+        <CardDescription>
+          Precio:
+          {info.price}
+        </CardDescription>
         <Box
           sx={{
             marginTop: 4,

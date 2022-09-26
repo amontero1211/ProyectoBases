@@ -21,7 +21,6 @@ function Root() {
       /> */}
       <welcomeheader />
       <Welcome />
-      <a
       <div className="Filtro">
         <Filtro options={opciones} />
       </div>

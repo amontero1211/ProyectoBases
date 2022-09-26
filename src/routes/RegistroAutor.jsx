@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { useForm, Controller } from 'react-hook-form';
 import Card from '@mui/material/Card';
 import Skeleton from '@mui/material/Skeleton';
@@ -100,14 +99,6 @@ function Registroautor() {
                   Upload picture
                   <input hidden accept="image/*" multiple type="file" />
                 </Button>
-                <IconButton
-                  color="secondary"
-                  aria-label="upload picture"
-                  component="label"
-                >
-                  <input hidden accept="image/*" type="file" />
-                  <PhotoCamera />
-                </IconButton>
                 <Button type="submit">Send</Button>
               </Box>
             )}

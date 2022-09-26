@@ -2,12 +2,12 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useForm, Controller } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Skeleton from '@mui/material/Skeleton';
 import axios from 'axios';
 import Button from '../components/Button';
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Login() {
@@ -15,7 +15,6 @@ function Login() {
   const { handleSubmit, control } = useForm();
 
   const onSubmit = async (data) => {
-    console.log('pene', data);
     try {
       setLoading(true);
       await axios.post('urldelendpointdelogin', data);
