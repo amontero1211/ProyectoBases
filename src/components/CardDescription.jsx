@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 
 const CardDescription = ({ children }) => (
-  <Typography variant="body2" component="div" textAlign="left">
+  <Typography variant="h4" component="div" textAlign="left">
     {children}
   </Typography>
 );

@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';
 import Button from './Button';
 import ArtTitle from './ArtTitle';
@@ -10,6 +10,8 @@ import '../App.css';
 // import { Children } from 'react';
 
 export default function Artes({ info }) {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -29,10 +31,12 @@ export default function Artes({ info }) {
             marginBottom: 4,
             marginLeft: 5,
             marginRight: 5,
-            width: 200,
+            width: 300,
           }}
         >
           <ArtImagen
+            // TODO: Reparar info.image
+            // pictureUrl={info.image}
             pictureUrl="/src/pictures/Logo Museo.png"
             altText="Art"
             className="Tarjeta"
@@ -48,9 +52,17 @@ export default function Artes({ info }) {
             marginLeft: 12,
           }}
         >
-          <Link to="/vermas">
-            <Button>Ver mas</Button>
-          </Link>
+          <Button
+            onClick={() => {
+              navigate('/vermas', { state: info });
+            }}
+            sx={{
+              display: 'flex',
+              ml: 6,
+            }}
+          >
+            Ver mas
+          </Button>
         </Box>
       </CardArt>
     </Box>

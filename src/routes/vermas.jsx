@@ -6,8 +6,11 @@ import ArtTitle from '../components/ArtTitle';
 import ArtImagen from '../components/ArtImagen';
 import Costo from '../components/Costo';
 import CardDescription from '../components/CardDescription';
+import { Link, useLocation } from 'react-router-dom';
 
-function Root() {
+function ArtworkPage() {
+  const { state } = useLocation();
+
   return (
     <div className="App">
       <h1>Ver mas</h1>
@@ -17,7 +20,7 @@ function Root() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 3,
+          gap: 6,
           marginLeft: 30,
           marginRight: 30,
           marginTop: 15,
@@ -26,7 +29,9 @@ function Root() {
         }}
       >
         <Box sx={{ marginTop: 10 }}>
-          <ArtTitle>Anya</ArtTitle>
+          <Link to={`/Autor/${state.artist_id}`}>
+            <ArtTitle>{state.name}</ArtTitle>
+          </Link>
         </Box>
         <Box
           sx={{
@@ -45,21 +50,24 @@ function Root() {
               marginBottom: 10,
             }}
           >
-            <Costo>Alala</Costo>
-            <CardDescription>Fuaaa</CardDescription>
+            <Costo>{state.price}</Costo>
+            <CardDescription>Genre: {state.genre}</CardDescription>
+            <CardDescription>Create date: {state.create_date}</CardDescription>
+            <CardDescription>Estado: {state.state}</CardDescription>
           </Box>
         </Box>
         <Box
           sx={{
-            marginTop: 10,
             marginBottom: 10,
           }}
         >
-          <Button size="large"> Comprar </Button>
+          <Link to="/Direccionfactura">
+            <Button size="large"> Comprar </Button>
+          </Link>
         </Box>
       </Box>
     </div>
   );
 }
 
-export default Root;
+export default ArtworkPage;

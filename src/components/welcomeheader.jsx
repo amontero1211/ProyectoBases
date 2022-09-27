@@ -4,7 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import { deepPurple } from '@mui/material/colors';
 
-function Header() {
+function Welcomeheader() {
   return (
     <AppBar position="static" style={{ background: '#ce93d8' }}>
       <Box sx={{ display: 'flex', gap: 90 }}>
@@ -34,4 +34,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Welcomeheader;
