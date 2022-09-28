@@ -19,7 +19,7 @@ function Register() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post('urldelendpointderegister', data);
+      await axios.post('http://localhost:8000/user', data);
       setLoading(false);
     } catch (error) {
       alert(error);
@@ -61,7 +61,7 @@ function Register() {
                   )}
                 />
                 <Controller
-                  name="ID"
+                  name="id"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
@@ -114,6 +114,7 @@ function Register() {
                   In case you forgot your password, you might need to answer
                   this questions
                 </p>
+                <Filtro id="preguntas1" options={opciones} />
                 <Controller
                   name="pregunta1"
                   control={control}

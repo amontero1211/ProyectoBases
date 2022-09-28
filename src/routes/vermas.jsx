@@ -1,4 +1,6 @@
 import '../App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -7,9 +9,24 @@ import ArtImagen from '../components/ArtImagen';
 import Costo from '../components/Costo';
 import CardDescription from '../components/CardDescription';
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+
+const URL = 'http://localhost:8000';
 
 function ArtworkPage() {
-  const { state } = useLocation();
+  const [state, setState] = useState(useLocation().state);
+
+  useEffect(() => {
+    const getArtistInfo = async () => {
+      const { data: artist } = await axios.get(
+        `${URL}/artists/${state.artist_id}`
+      );
+      setState({ ...state, artist_id: artist });
+    };
+    getArtistInfo();
+  }, []);
+
+  console.log(state);
 
   return (
     <div className="App">
@@ -24,14 +41,15 @@ function ArtworkPage() {
           marginLeft: 30,
           marginRight: 30,
           marginTop: 15,
-          width: 700,
+          width: 1000,
           backgroundColor: '#ce93d8',
         }}
       >
         <Box sx={{ marginTop: 10 }}>
-          <Link to={`/Autor/${state.artist_id}`}>
-            <ArtTitle>{state.name}</ArtTitle>
+          <Link to={`/Autor/${state.artist_id.id}`}>
+            <ArtTitle>{state.artist_id.name}</ArtTitle>
           </Link>
+          <ArtTitle>{state.name}</ArtTitle>
         </Box>
         <Box
           sx={{
@@ -39,7 +57,7 @@ function ArtworkPage() {
           }}
         >
           <ArtImagen
-            pictureUrl="/src/pictures/Logo Museo.png"
+            pictureUrl={state.image}
             altText="Art"
             className="Tarjeta"
             sx={{ width: 500, height: 500 }}
@@ -51,8 +69,10 @@ function ArtworkPage() {
             }}
           >
             <Costo>{state.price}</Costo>
-            <CardDescription>Genre: {state.genre}</CardDescription>
-            <CardDescription>Create date: {state.create_date}</CardDescription>
+            <CardDescription>Genero: {state.genre}</CardDescription>
+            <CardDescription>
+              Fecha de Creacion: {state.create_date}
+            </CardDescription>
             <CardDescription>Estado: {state.state}</CardDescription>
           </Box>
         </Box>

@@ -35,9 +35,7 @@ export default function Artes({ info }) {
           }}
         >
           <ArtImagen
-            // TODO: Reparar info.image
-            // pictureUrl={info.image}
-            pictureUrl="/src/pictures/Logo Museo.png"
+            pictureUrl={info.image}
             altText="Art"
             className="Tarjeta"
           />

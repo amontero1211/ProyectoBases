@@ -44,7 +44,7 @@ function Root() {
           marginLeft: 30,
           marginRight: 30,
           marginTop: 15,
-          width: 700,
+          width: 1000,
           backgroundColor: '#ce93d8',
         }}
       >
@@ -54,6 +54,8 @@ function Root() {
         <Box
           sx={{
             marginTop: 5,
+            ml: 30,
+            mr: 10,
           }}
         >
           <ArtImagen
