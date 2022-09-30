@@ -19,7 +19,9 @@ function Register() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post('http://localhost:8000/user', data);
+      console.log({data})
+      const req = await axios.post('http://localhost:8000/user', data);
+      console.log({req})
       setLoading(false);
     } catch (error) {
       alert(error);
