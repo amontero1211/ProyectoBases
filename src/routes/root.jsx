@@ -49,8 +49,8 @@ export default function Root() {
 
   useEffect(() => {
     const getInfo = async () => {
-      const { data: artworksData } = await axios.get(`${URL}/artworks`);
-      const { data: artistsData } = await axios.get(`${URL}/artists`);
+      const { data: artworksData } = await axios.get(`${URL}/api/artworks`);
+      const { data: artistsData } = await axios.get(`${URL}/api/artists`);
       console.log(artworksData);
       setArtistData(artistsData);
       setInfo(artworksData);

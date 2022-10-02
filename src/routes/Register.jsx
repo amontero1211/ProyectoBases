@@ -7,19 +7,22 @@ import Skeleton from '@mui/material/Skeleton';
 import axios from 'axios';
 import Button from '../components/Button';
 import Header from '../components/Header';
-import Filtro from '../components/Filtro';
 import '../App.css';
 
-const opciones = ['Opcion 1', 'Opcion 2'];
+const URL = 'http://localhost:8000/api';
 
 function Register() {
   const [isLoading, setLoading] = useState(false);
   const { handleSubmit, control } = useForm();
+  // const [data, setData] = useState();
 
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post('http://localhost:8000/user', data);
+      await axios.post(`${URL}/purchaser/`, data);
+      console.log({ data });
+      const req = await axios.post('', data);
+      console.log({ req });
       setLoading(false);
     } catch (error) {
       alert(error);
@@ -60,18 +63,18 @@ function Register() {
                     />
                   )}
                 />
-                <Controller
-                  name="id"
-                  control={control}
-                  render={({ field: { onChange, value } }) => (
-                    <TextField
-                      onChange={onChange}
-                      value={value}
-                      id="ID"
-                      label="ID number"
-                    />
-                  )}
-                />
+                {/* // <Controller
+                //   name="id"
+                //   control={control}
+                //   render={({ field: { onChange, value } }) => (
+                //     <TextField
+                //       onChange={onChange}
+                //       value={value}
+                //       id="ID"
+                //       label="ID number"
+                //     />
+                //   )}
+                // /> */}
                 <Controller
                   name="email"
                   control={control}
@@ -85,13 +88,13 @@ function Register() {
                   )}
                 />
                 <Controller
-                  name="user"
+                  name="username"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="user"
+                      id="username"
                       label="User"
                     />
                   )}
@@ -114,78 +117,111 @@ function Register() {
                   In case you forgot your password, you might need to answer
                   this questions
                 </p>
-                <Filtro id="preguntas1" options={opciones} />
                 <Controller
-                  name="pregunta1"
+                  name="question_1"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="pregunta1"
+                      id="question_1"
+                      label="First Question"
+                    />
+                  )}
+                />
+                <Controller
+                  name="answer_1"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="answer_1"
                       label="First Answer"
                     />
                   )}
                 />
-                <Filtro id="preguntas2" options={opciones} />
                 <Controller
-                  name="pregunta2"
+                  name="question_2"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="pregunta2"
+                      id="question_2"
+                      label="Second Question"
+                    />
+                  )}
+                />
+                <Controller
+                  name="answer_2"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="answer_2"
                       label="Second Answer"
                     />
                   )}
                 />
-                <Filtro id="preguntas3" options={opciones} />
                 <Controller
-                  name="pregunta3"
+                  name="question_3"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="pregunta3"
+                      id="question_3"
+                      label="Third Answer"
+                    />
+                  )}
+                />
+                <Controller
+                  name="answer_3"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <TextField
+                      onChange={onChange}
+                      value={value}
+                      id="answer_3"
                       label="Third Answer"
                     />
                   )}
                 />
                 <h4>Your credit card info</h4>
                 <Controller
-                  name="creditcardnumber"
+                  name="card_number"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="creditcardnumber"
+                      id="card_number"
                       label="Number"
                     />
                   )}
                 />
                 <Controller
-                  name="ExpDate"
+                  name="card_expiration_date"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="ExpDate"
+                      id="card_expiration_date"
                       label="Expiration Date ex: MM/YY"
                     />
                   )}
                 />
                 <Controller
-                  name="BackNumbers"
+                  name="card_back_number"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <TextField
                       onChange={onChange}
                       value={value}
-                      id="BackNumbers"
+                      id="card_back_number"
                       label="Numbers from the back of your card ex:XXX"
                     />
                   )}

@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Welcomeheader from '../components/welcomeheader';
 import Button from '../components/Button';
+import { useLocation } from 'react-router-dom';
 // import Slack from '@mui/material/Slack';
 // import Autocomplete from '@mui/material/Autocomplete';
 // import TextField from '@mui/material/TextField';
@@ -39,7 +40,7 @@ function Factura() {
             <h4>Email: </h4>
             <h4>Adress: </h4>
             <h4>Card Number: </h4>
-            <h3>Art Name: {info.name}</h3>
+            <h3>Art Name: </h3>
             <h3>Sold on: </h3>
             <h3>Price: </h3>
             <h3>IVA 7%: </h3>

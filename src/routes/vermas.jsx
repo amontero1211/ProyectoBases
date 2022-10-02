@@ -11,7 +11,7 @@ import CardDescription from '../components/CardDescription';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-const URL = 'http://localhost:8000';
+const URL = 'http://localhost:8000/api';
 
 function ArtworkPage() {
   const [state, setState] = useState(useLocation().state);

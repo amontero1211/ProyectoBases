@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const baseURL = 'http://127.0.0.1:8000';
+const baseURL = 'http://127.0.0.1:8000/api';
 
 function Root() {
   const { authorId } = useParams();
@@ -59,7 +59,7 @@ function Root() {
           }}
         >
           <ArtImagen
-            pictureUrl="/src/pictures/Logo Museo.png"
+            pictureUrl={data.image || '/src/pictures/Logo Museo.png'}
             altText="Art"
             className="Tarjeta"
             sx={{ width: 500, height: 500 }}

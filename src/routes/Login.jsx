@@ -17,7 +17,7 @@ function Login() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post('urldelendpointdelogin', data);
+      await axios.get('urldelendpointdelogin', data);
       setLoading(false);
     } catch (error) {
       alert(error);
